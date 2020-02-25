@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Для ситхов</title>
+</head>
+<body>
+
+    <div class="general-container">
+        <h1 class="title">Страница для ситхов</h1>
+        <div>
+            <form action="" method="post">{% csrf_token %}
+                {{ form.as_p }}
+                <div>
+                    <button type="submit" class="btn btn-primary">Далее</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

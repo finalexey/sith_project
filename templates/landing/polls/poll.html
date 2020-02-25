@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Опрос</title>
+</head>
+<body>
+    <h1>Опрос</h1>
+    {% block content %}
+        <h3>{{question.title}}</h3>
+    <form method="POST" action="/recruit_polls/polls_list">
+        {% csrf_token %}
+        {% for choice in question.choices %}
+            <label>{{choice.text}}</label>
+            <input type="radio" name="choice" value="{{choice.id}}">
+        {% empty %}
+            <p>Нет доступных вопросов</p>
+        {% endfor %}
+            <button type="submit" value="Vote">Ок</button>
+    </form>
+    {% endblock content %}
+
+</body>
+</html>

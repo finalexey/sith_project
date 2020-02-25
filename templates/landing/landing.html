@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Система рекрутинга</title>
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+</head>
+<body>
+    <h1><h1 class="title"><a href="{% url 'forrecr' %}">Для рекрутов</a> | <a href="{% url 'forsith' %}">Для ситхов</h1></h1>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

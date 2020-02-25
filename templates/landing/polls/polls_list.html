@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список вопросов</title>
+</head>
+<body>
+    <h1>Опрос</h1>
+    {% block content %}
+        <h2>Список вопросов</h2>
+    <h4>Ответьте на все три вопроса и нажмите Далее</h4>
+        {% if questions %}
+            <ul>
+                {% for question in questions %}
+                <li>
+                    <a href="/recruit_polls/{{question.id}}">{{question.title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Вопросы не добавлены</p>
+        {% endif %}
+    <form action="{% url 'landing' %}" method="get">
+    <button type="submit">Вопросы пройдены</button>
+    </form>
+    {% endblock content %}
+</body>
+</html>

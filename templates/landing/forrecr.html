@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Для рекрутов</title>
+
+</head>
+<body>
+
+    <div class="general-container">
+        <div class="container top-container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h1 class="title">Добро пожаловать, рекрут!<br>
+                    Заполни поля для продолжения</h1>
+                    <div>
+                        <form action="" method="post"> {% csrf_token %}
+                                {{ form.as_p }}
+                        <div>
+                                <button type="submit" class="btn btn-primary">Далее</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
